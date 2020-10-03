@@ -3,14 +3,16 @@ provider:
   # boilerplate
   name: aws
   runtime: nodejs12.x
+
   # you need to make an account on aws and save the creds of a new IAM user on your machine.
   profile: personal
 
 functions:
-# this is the name of the main function for your back end. You can make as many as you need - i.e. 
+# this is the name of the main function for your back end. You can make as many as you need
   hello:
   # define the functions entrypoint
     handler: handler.hello
+    # this section automatically creates an API gateway that will trigger this function on the methods defined.
     events:
       - http: GET hello
 
